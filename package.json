@@ -3,6 +3,7 @@
   "version": "1.0.4",
   "description": "A tokenizing algorithm for full-text-indexing that tokenizes and stemms the input text",
   "main": "src/index.ts",
+  "type": "module",
   "scripts": {
     "test": "jest"
   },
