@@ -1,8 +1,9 @@
 {
   "name": "@codineerdigital/full-text-tokenizer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A tokenizing algorithm for full-text-indexing that tokenizes and stemms the input text",
   "main": "src/index.ts",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0"
   },
