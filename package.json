@@ -1,11 +1,10 @@
 {
   "name": "@codineerdigital/full-text-tokenizer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A tokenizing algorithm for full-text-indexing that tokenizes and stemms the input text",
   "main": "src/index.ts",
-  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,6 +17,8 @@
   },
   "homepage": "https://github.com/CodineerDigital/full-text-tokenizer#readme",
   "devDependencies": {
+    "@types/jest": "^29.2.4",
+    "ts-jest": "^29.0.3",
     "typescript": "^4.9.3"
   },
   "publishConfig": {
