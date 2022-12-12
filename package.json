@@ -1,0 +1,25 @@
+{
+  "name": "@codineerdigital/npm-package-template",
+  "version": "1.0.0",
+  "description": "NPM package template with TypeScript",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodineerDigital/npm-package-template.git"
+  },
+  "author": "Codineer Digital",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/CodineerDigital/npm-package-template/issues"
+  },
+  "homepage": "https://github.com/CodineerDigital/npm-package-template#readme",
+  "devDependencies": {
+    "typescript": "^4.9.3"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}
