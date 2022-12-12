@@ -16,10 +16,11 @@ const deduplicate = (array: string[]): string[] => {
  * @returns The tokens of the input string
  */
 export const tokenize = (input: string): string[] => {
-    return deduplicate(input.replace(/[^a-zA-Z0-9 ]/g, ' ').toLowerCase().split(" ").filter(token => !stopWords.includes(token)));
+    return deduplicate(input.replace(/[^a-zA-Z0-9 ]/g, ' ').toLowerCase().split(" ").filter(token => !stopWords.includes(token) && token.length > 0));
 }
 
-const stemEndings = ["s", "ing", "ed", "ally", "ously", "es", "ity", "ly", "le", "ion", "ive", "e", "ice", "ar", "us", "ility", "ful", "less"]
+const suffixes = ["s", "ing", "ed", "ally", "ously", "es", "ity", "ly", "le", "ion", "ive", "e", "ice", "ar", "us", "ility", "ful", "less"]
+const prefixes = ["un", "ir", "in", "im", "pre", "anti", "de", "dis", "em", "non", "pro", "uni"]
 
 /**
  * Stems tokens
@@ -28,9 +29,16 @@ const stemEndings = ["s", "ing", "ed", "ally", "ously", "es", "ity", "ly", "le",
  */
 export const stem = (input: string[]): string[] => {
     return deduplicate(input.map(token => {
-        for (const ending of stemEndings) {
+        for (const ending of suffixes) {
             if (token.endsWith(ending)) {
                 return token.substring(0, token.length - ending.length);
+            }
+        }
+        return token;
+    }).map(token => {
+        for (const prefix of prefixes) {
+            if (token.startsWith(prefix)) {
+                return token.substring(prefix.length);
             }
         }
         return token;
